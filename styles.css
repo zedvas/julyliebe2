@@ -4,6 +4,7 @@ RESETS
 :root {
   font-size: 62.5%;
 }
+
 *,
 h1,
 h2,
@@ -15,6 +16,7 @@ h6 {
   margin: 0;
   padding: 0;
 }
+
 a,
 a:visited,
 a:link:active,
@@ -22,15 +24,17 @@ a:visited:active {
   text-decoration: none;
   color: inherit;
 }
+
 ol,
 ul {
   list-style: none;
-} //margin:0, padding:0
-// p {margin:0}
+}
+
 body {
   width: 100vw;
   height: 100vh;
 }
+
 /****************************
 VARIABLES & MIXINS
 *****************************/
@@ -41,13 +45,4 @@ VARIABLES & MIXINS
   --black: hsl(0, 0%, 0%);
   --yellow: hsl(71, 100%, 92%);
   --burgundy: hsl(0, 59%, 30%);
-}
-
-@mixin flex ($direction, $justify, $align) {
-    display:flex;
-    flex-direction: $direction;
-    justify-content: $justify;
-    align-items: $align;
-}
-
-
+}/*# sourceMappingURL=styles.css.map */
