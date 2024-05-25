@@ -91,6 +91,10 @@ nav ul img {
   width: 100px;
 }
 
+nav svg {
+  width: 2rem;
+}
+
 @media (min-width: 700px) {
   nav ul img {
     width: 120px;
