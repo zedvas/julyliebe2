@@ -45,4 +45,16 @@ VARIABLES & MIXINS
   --black: hsl(0, 0%, 0%);
   --yellow: hsl(71, 100%, 92%);
   --burgundy: hsl(0, 59%, 30%);
+}
+
+/****************************
+BANNER
+*****************************/
+p {
+  font-family: Nunito;
+  color: red;
+}
+
+body {
+  background-color: red;
 }/*# sourceMappingURL=styles.css.map */

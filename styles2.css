@@ -4,6 +4,7 @@ RESETS
 :root {
   font-size: 62.5%;
 }
+
 *,
 h1,
 h2,
@@ -15,6 +16,7 @@ h6 {
   margin: 0;
   padding: 0;
 }
+
 a,
 a:visited,
 a:link:active,
@@ -22,15 +24,17 @@ a:visited:active {
   text-decoration: none;
   color: inherit;
 }
+
 ol,
 ul {
   list-style: none;
-} //margin:0, padding:0
-// p {margin:0}
+}
+
 body {
   width: 100vw;
   height: 100vh;
 }
+
 /****************************
 VARIABLES & MIXINS
 *****************************/
@@ -43,20 +47,14 @@ VARIABLES & MIXINS
   --burgundy: hsl(0, 59%, 30%);
 }
 
-@mixin flex ($direction, $justify, $align) {
-    display:flex;
-    flex-direction: $direction;
-    justify-content: $justify;
-    align-items: $align;
-}
 /****************************
 BANNER
 *****************************/
-
 p {
-    font-family: Nunito;
-    color:red
+  font-family: Nunito;
+  color: red;
 }
+
 body {
-    background-color: red;
-}
+  background-color: red;
+}/*# sourceMappingURL=styles2.css.map */
