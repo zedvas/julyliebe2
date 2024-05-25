@@ -31,6 +31,10 @@ body {
   width: 100vw;
   height: 100vh;
 }
+html {
+  font-family: Nunito;
+  text-transform: uppercase;
+}
 /****************************
 VARIABLES & MIXINS
 *****************************/
@@ -43,20 +47,30 @@ VARIABLES & MIXINS
   --burgundy: hsl(0, 59%, 30%);
 }
 
-@mixin flex ($direction, $justify, $align) {
-    display:flex;
-    flex-direction: $direction;
-    justify-content: $justify;
-    align-items: $align;
+@mixin flex($direction, $justify, $align) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify;
+  align-items: $align;
 }
 /****************************
 BANNER
 *****************************/
 
-p {
-    font-family: Nunito;
-    color:red
+svg {
+  width: 14px;
 }
-body {
-    background-color: red;
+.banner {
+  height: 5vh;
+  width: 100%;
+  background-color: var(--black);
 }
+.banner p {
+  font-size: 1.2rem;
+  color: var(--white);
+  text-align: center;
+}
+
+/****************************
+NAVBAR
+*****************************/
