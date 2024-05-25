@@ -73,4 +73,26 @@ svg {
 
 /****************************
 NAVBAR
-*****************************//*# sourceMappingURL=styles.css.map */
+*****************************/
+nav {
+  height: 10vh;
+  background-color: var(--white);
+}
+
+nav ul {
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav ul img {
+  width: 100px;
+}
+
+@media (min-width: 700px) {
+  nav ul img {
+    width: 120px;
+  }
+}/*# sourceMappingURL=styles.css.map */

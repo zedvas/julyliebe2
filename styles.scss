@@ -74,3 +74,19 @@ svg {
 /****************************
 NAVBAR
 *****************************/
+nav {
+  height: 10vh;
+  background-color: var(--white);
+}
+nav ul {
+  height: 100%;
+  @include flex(row, space-between, center);
+}
+nav ul img {
+  width: 100px;
+}
+@media (min-width: 700px) {
+  nav ul img {
+    width: 120px;
+  }
+}
