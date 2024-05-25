@@ -1,0 +1,26 @@
+:root {
+  font-size: 62.5%;
+}
+*,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+a,
+a:visited,
+a:link:active,
+a:visited:active {
+  text-decoration: none;
+  color: inherit;
+}
+ol,
+ul {
+  list-style: none;
+} //margin:0, padding:0
+// p {margin:0}
