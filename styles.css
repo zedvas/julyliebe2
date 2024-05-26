@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /****************************
 RESETS
 *****************************/
@@ -42,6 +43,10 @@ body {
 html {
   font-family: Nunito;
   text-transform: uppercase;
+}
+
+.price::before {
+  content: "£";
 }
 
 /****************************
@@ -186,7 +191,7 @@ img {
   height: auto;
 }
 
-.overlay {
+.hero-overlay {
   position: absolute;
   top: 0;
   height: 100%;
@@ -201,24 +206,24 @@ h1 {
   color: var(--white);
 }
 
-.overlay button {
+.hero-overlay button {
   background-color: var(--yellow);
   color: var(--burgundy);
   border: 1px solid var(--yellow);
   transition: all 1s ease-in-out;
 }
 
-.overlay button:hover {
+.hero-overlay button:hover {
   background-color: transparent;
   color: var(--white);
 }
 
-.material-symbols-outlined {
+.scroll-button-container .material-symbols-outlined {
   font-size: 4rem;
   background-color: transparent;
 }
 
-button:has(.material-symbols-outlined) {
+.scroll-button-container button {
   height: 6rem;
   width: 6rem;
   border-radius: 50%;
@@ -230,9 +235,63 @@ button:has(.material-symbols-outlined) {
   margin-top: -32px;
 }
 
-.button-container {
+.scroll-button-container {
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
+}
+
+/****************************
+PRODUCT CARD 
+*****************************/
+.product-card {
+  width: 30vw;
+}
+
+.img-container {
+  width: 100%;
+  position: relative;
+}
+
+.primary-img, .overlay-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+}
+
+.overlay-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.overlay-container > div {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.add-button {
+  align-self: flex-end;
+}
+
+.product-info {
+  text-align: center;
+}
+
+.img-container:hover .primary-img {
+  opacity: 0;
+}
+
+.overlay-text {
+  background-color: red;
+}
+
+.additional-text {
+  background-color: var(--white);
 }/*# sourceMappingURL=styles.css.map */

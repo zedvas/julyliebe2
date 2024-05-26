@@ -38,6 +38,9 @@ html {
   font-family: Nunito;
   text-transform: uppercase;
 }
+.price::before {
+  content: '£';
+}
 /****************************
 VARIABLES & MIXINS
 *****************************/
@@ -161,7 +164,7 @@ img {
   width: 100%;
   height: auto;
 }
-.overlay {
+.hero-overlay {
   position: absolute;
   top: 0;
   height: 100%;
@@ -172,21 +175,21 @@ img {
 h1 {
   color: var(--white);
 }
-.overlay button {
+.hero-overlay button {
   background-color: var(--yellow);
   color: var(--burgundy);
   border: 1px solid var(--yellow);
   transition: all 1s ease-in-out
 }
-.overlay button:hover {
+.hero-overlay button:hover {
 background-color: transparent;
 color:var(--white);
 }
-.material-symbols-outlined {
+.scroll-button-container .material-symbols-outlined {
   font-size:4rem;
   background-color: transparent;
 }
-button:has(.material-symbols-outlined) {
+.scroll-button-container button {
   height: 6rem;
   width: 6rem;
   border-radius: 50%;
@@ -198,6 +201,45 @@ button:has(.material-symbols-outlined) {
 margin-top:-32px;
 }
 
-.button-container {
+.scroll-button-container {
   @include flex(row, center, center)
+}
+/****************************
+PRODUCT CARD 
+*****************************/
+.product-card {
+  width:30vw;
+}
+.img-container {
+  width: 100%;
+  position: relative;
+
+}
+.primary-img, .overlay-container {
+  position: absolute;
+  top:0;
+  left:0;
+  height:100%;
+  width: 100%;
+}
+.overlay-container {
+  @include flex(column, space-between, flex-start)
+}
+.overlay-container > div {
+  @include flex(column, flex-start, flex-start)
+}
+.add-button {
+  align-self: flex-end
+}
+.product-info {
+  text-align: center;
+}
+.img-container:hover .primary-img {
+opacity:0
+}
+.overlay-text{
+  background-color: red;
+}
+.additional-text {
+  background-color: var(--white);
 }
