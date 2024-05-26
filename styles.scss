@@ -182,4 +182,22 @@ h1 {
 background-color: transparent;
 color:var(--white);
 }
+.material-symbols-outlined {
+  font-size:4rem;
+  background-color: transparent;
+}
+button:has(.material-symbols-outlined) {
+  height: 6rem;
+  width: 6rem;
+  border-radius: 50%;
+  rotate: 90deg;
+  background-color: var(--white);
+  color:var(--text);
+  box-shadow: 4px 0px 4px grey;
+  outline:0;
+margin-top:-32px;
+}
 
+.button-container {
+  @include flex(row, center, center)
+}
