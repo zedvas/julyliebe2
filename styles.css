@@ -1,0 +1,214 @@
+/****************************
+RESETS
+*****************************/
+:root {
+  font-size: 62.5%;
+}
+
+*,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+a,
+a:visited,
+a:link:active,
+a:visited:active {
+  text-decoration: none;
+  color: inherit;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+button {
+  border: none;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+}
+
+html {
+  font-family: Nunito;
+  text-transform: uppercase;
+}
+
+/****************************
+VARIABLES & MIXINS
+*****************************/
+:root {
+  --banner-height: 5vh;
+  --navbar-height: 10vh;
+  --navbar-width: 50vw;
+  --white: hsl(300, 50%, 98%);
+  --pink: hsla(328, 100%, 58%, 1);
+  --text: hsl(0, 0%, 19%);
+  --black: hsl(0, 0%, 0%);
+  --yellow: hsl(71, 100%, 92%);
+  --burgundy: hsl(0, 59%, 30%);
+}
+
+/****************************
+BANNER
+*****************************/
+svg {
+  width: 14px;
+}
+
+.banner {
+  height: var(--banner-height);
+  width: 100%;
+  background-color: var(--black);
+}
+
+.banner p {
+  font-size: 1.2rem;
+  color: var(--white);
+  text-align: center;
+}
+
+/****************************
+NAVBAR
+*****************************/
+nav {
+  height: var(--navbar-height);
+  background-color: var(--white);
+}
+
+nav ul {
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav ul img {
+  width: 100px;
+}
+
+nav svg {
+  width: 2rem;
+}
+
+@media (min-width: 700px) {
+  nav ul img {
+    width: 120px;
+  }
+}
+/****************************
+NAV MENU
+*****************************/
+body {
+  position: relative;
+}
+
+nav ul ul,
+.login-icon,
+.preferences-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  position: absolute;
+  background-color: var(--white);
+  width: var(--navbar-width);
+  height: calc(100vh - (var(--banner-height)) - var(--navbar-height));
+  bottom: 0;
+  left: 0;
+}
+
+.preferences-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.login-icon {
+  bottom: 30px;
+}
+
+.login-icon,
+.preferences-container,
+nav ul ul li {
+  border-bottom: 1px solid grey;
+  width: 100%;
+}
+
+.login-icon,
+.preferences-container {
+  width: var(--navbar-width);
+  height: unset;
+}
+
+nav ul ul {
+  display: none;
+}
+
+nav ul li:hover ul,
+nav ul li:hover .preferences-container {
+  display: block;
+}
+
+nav ul li:hover .open-hamburger {
+  display: none;
+}
+
+nav ul li:hover .close-hamburger {
+  display: block;
+}
+
+.close-hamburger {
+  display: none;
+}
+
+/****************************
+HERO SECTION
+*****************************/
+section {
+  position: relative;
+}
+
+img {
+  width: 100%;
+  height: auto;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+h1 {
+  color: var(--white);
+}
+
+.overlay button {
+  background-color: var(--yellow);
+  color: var(--burgundy);
+  border: 1px solid var(--yellow);
+  transition: all 1s ease-in-out;
+}
+
+.overlay button:hover {
+  background-color: transparent;
+  color: var(--white);
+}/*# sourceMappingURL=styles.css.map */
