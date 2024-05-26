@@ -252,6 +252,7 @@ PRODUCT CARD
 .img-container {
   width: 100%;
   position: relative;
+  transition: all 5s ease-in-out;
 }
 
 .primary-img, .overlay-container {
@@ -278,6 +279,7 @@ PRODUCT CARD
 
 .add-button {
   align-self: flex-end;
+  display: none;
 }
 
 .product-info {
@@ -288,10 +290,16 @@ PRODUCT CARD
   opacity: 0;
 }
 
+.img-container:hover .add-button {
+  display: unset;
+}
+
 .overlay-text {
-  background-color: red;
+  background-color: hsl(0, 100%, 50%);
+  color: var(--white);
 }
 
 .additional-text {
   background-color: var(--white);
+  color: var(--black);
 }/*# sourceMappingURL=styles.css.map */
