@@ -29,6 +29,7 @@ ul {
 // p {margin:0}
 button {
   border: none;
+  text-transform: uppercase;
 }
 body {
   width: 100vw;
@@ -40,6 +41,18 @@ html {
 }
 .price::before {
   content: '£';
+}
+.primary-button {
+  background-color: var(--pink);
+  color:var(--white);
+  margin: auto;
+}
+h1 {
+  color:var(--pink);
+  text-align: center;
+}
+h1, h2, h3, h4, h5, h6, button {
+  font-family: 'Noto Sans', sans-serif;
 }
 /****************************
 VARIABLES & MIXINS
@@ -157,7 +170,7 @@ nav ul li:hover .close-hamburger {
 /****************************
 HERO SECTION
 *****************************/
-section {
+.hero-section {
   position: relative;
 }
 img {
@@ -172,7 +185,7 @@ img {
   @include flex(column, center, center);
 }
 
-h1 {
+.hero-section h1 {
   color: var(--white);
 }
 .hero-overlay button {
@@ -208,7 +221,7 @@ margin-top:-32px;
 PRODUCT CARD 
 *****************************/
 .product-card {
-  width:30vw;
+  min-width:30vw;
 }
 .img-container {
   width: 100%;
@@ -250,4 +263,17 @@ opacity:0;
 .additional-text {
   background-color: var(--white);
   color:var(--black)
+}
+/****************************
+CAROUSEL
+*****************************/
+.carousel{
+@include flex(row, center, center)}
+
+.primary-button-container {
+  width:100vw;
+  @include flex(row,center,center )
+}
+.primary-button {
+  // margin:auto; //Why doesn't this ever work as expected?
 }

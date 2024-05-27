@@ -33,6 +33,7 @@ ul {
 
 button {
   border: none;
+  text-transform: uppercase;
 }
 
 body {
@@ -47,6 +48,21 @@ html {
 
 .price::before {
   content: "£";
+}
+
+.primary-button {
+  background-color: var(--pink);
+  color: var(--white);
+  margin: auto;
+}
+
+h1 {
+  color: var(--pink);
+  text-align: center;
+}
+
+h1, h2, h3, h4, h5, h6, button {
+  font-family: "Noto Sans", sans-serif;
 }
 
 /****************************
@@ -182,7 +198,7 @@ nav ul li:hover .close-hamburger {
 /****************************
 HERO SECTION
 *****************************/
-section {
+.hero-section {
   position: relative;
 }
 
@@ -202,7 +218,7 @@ img {
   align-items: center;
 }
 
-h1 {
+.hero-section h1 {
   color: var(--white);
 }
 
@@ -246,7 +262,7 @@ h1 {
 PRODUCT CARD 
 *****************************/
 .product-card {
-  width: 30vw;
+  min-width: 30vw;
 }
 
 .img-container {
@@ -302,4 +318,22 @@ PRODUCT CARD
 .additional-text {
   background-color: var(--white);
   color: var(--black);
+}
+
+/****************************
+CAROUSEL
+*****************************/
+.carousel {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.primary-button-container {
+  width: 100vw;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
 }/*# sourceMappingURL=styles.css.map */
