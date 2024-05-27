@@ -277,3 +277,17 @@ CAROUSEL
 .primary-button {
   // margin:auto; //Why doesn't this ever work as expected?
 }
+/****************************
+FOOTER
+*****************************/
+.footer-main {
+  display: flex;
+  flex-wrap: wrap;
+}
+.footer-main div {
+  min-width:300px;
+  width: 30vw;
+}
+.footer-main > div {
+  flex:2;
+}

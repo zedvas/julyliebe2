@@ -336,4 +336,21 @@ CAROUSEL
   flex-direction: row;
   justify-content: center;
   align-items: center;
+}
+
+/****************************
+FOOTER
+*****************************/
+.footer-main {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.footer-main div {
+  min-width: 300px;
+  width: 30vw;
+}
+
+.footer-main > div {
+  flex: 2;
 }/*# sourceMappingURL=styles.css.map */
