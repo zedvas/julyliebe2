@@ -40,19 +40,27 @@ html {
   text-transform: uppercase;
 }
 .price::before {
-  content: '£';
+  content: "£";
 }
 .primary-button {
   background-color: var(--pink);
-  color:var(--white);
+  color: var(--white);
   margin: auto;
+  font-size: 1.5rem;
+  padding: 1em 2em;
 }
 h1 {
-  color:var(--pink);
+  color: var(--pink);
   text-align: center;
 }
-h1, h2, h3, h4, h5, h6, button {
-  font-family: 'Noto Sans', sans-serif;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+button {
+  font-family: "Noto Sans", sans-serif;
 }
 /****************************
 VARIABLES & MIXINS
@@ -122,6 +130,12 @@ NAV MENU
 body {
   position: relative; //To set height of hamburger menu relative to body width.
 }
+
+nav {
+  width: 100vw;
+  // @include flex(row, space-between, space-between);
+  ul {width: 100%;}
+}
 nav ul ul,
 .login-icon,
 .preferences-container {
@@ -172,122 +186,203 @@ HERO SECTION
 *****************************/
 .hero-section {
   position: relative;
-}
-img {
-  width: 100%;
-  height: auto;
-}
-.hero-overlay {
-  position: absolute;
-  top: 0;
-  height: 100%;
-  width: 100%;
-  @include flex(column, center, center);
-}
 
-.hero-section h1 {
-  color: var(--white);
-}
-.hero-overlay button {
-  background-color: var(--yellow);
-  color: var(--burgundy);
-  border: 1px solid var(--yellow);
-  transition: all 1s ease-in-out
-}
-.hero-overlay button:hover {
-background-color: transparent;
-color:var(--white);
-}
-.scroll-button-container .material-symbols-outlined {
-  font-size:4rem;
-  background-color: transparent;
-}
-.scroll-button-container button {
-  height: 6rem;
-  width: 6rem;
-  border-radius: 50%;
-  rotate: 90deg;
-  background-color: var(--white);
-  color:var(--text);
-  box-shadow: 4px 0px 4px grey;
-  outline:0;
-margin-top:-32px;
-}
+  img {
+    width: 100%;
+    height: auto;
+  }
+  .hero-overlay {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    @include flex(column, center, center);
+  }
 
-.scroll-button-container {
-  @include flex(row, center, center)
+  .hero-section h1 {
+    color: var(--burgundy);
+    font-size: 7rem;
+  }
+  .hero-overlay button {
+    background-color: var(--yellow);
+    color: var(--burgundy);
+    border: 1px solid var(--yellow);
+    transition: all 1s ease-in-out;
+    font-size: 2rem;
+    padding: 0.7em 1em;
+  }
+
+  .hero-overlay button:hover {
+    background-color: transparent;
+    color: var(--white);
+  }
+  .scroll-button-container .material-symbols-outlined {
+    font-size: 4rem;
+    background-color: transparent;
+  }
+  .scroll-button-container button {
+    height: 6rem;
+    width: 6rem;
+    border-radius: 50%;
+    rotate: 90deg;
+    background-color: var(--white);
+    color: var(--text);
+    box-shadow: 4px 0px 4px grey;
+    outline: 0;
+    margin-top: -32px;
+  }
+
+  .scroll-button-container {
+    @include flex(row, center, center);
+  }
 }
 /****************************
 PRODUCT CARD 
 *****************************/
 .product-card {
-  min-width:30vw;
-}
-.img-container {
-  width: 100%;
-  position: relative;
-  transition: all 5s ease-in-out;
-
-}
-.primary-img, .overlay-container {
-  position: absolute;
-  top:0;
-  left:0;
-  height:100%;
-  width: 100%;
-}
-.overlay-container {
-  @include flex(column, space-between, flex-start)
-}
-.overlay-container > div {
-  @include flex(column, flex-start, flex-start)
-}
-.add-button {
-  align-self: flex-end;
-  display:none;
-
-}
-.product-info {
-  text-align: center;
-}
-.img-container:hover .primary-img {
-opacity:0;
-}
-.img-container:hover .add-button {
-  display: unset;
-}
-.overlay-text{
-  background-color: hsl(0, 100%, 50%);
-  color:var(--white);
-}
-.additional-text {
-  background-color: var(--white);
-  color:var(--black)
+  img {
+    width: 320px;
+  }
+  .img-container {
+    width: 100%;
+    position: relative;
+    transition: all 5s ease-in-out;
+  }
+  .primary-img,
+  .overlay-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+  }
+  .overlay-container {
+    @include flex(column, space-between, flex-start);
+  }
+  .overlay-container > div {
+    @include flex(column, flex-start, flex-start);
+  }
+  .add-button {
+    align-self: flex-end;
+    display: none;
+  }
+  .product-info {
+    text-align: center;
+  }
+  .img-container:hover .primary-img {
+    opacity: 0;
+  }
+  .img-container:hover .add-button {
+    display: unset;
+  }
+  .overlay-text {
+    background-color: hsl(0, 100%, 50%);
+    color: var(--white);
+    font-size: 1.6rem;
+  }
+  .additional-text {
+    background-color: var(--white);
+    color: var(--black);
+  }
 }
 /****************************
 CAROUSEL
 *****************************/
-.carousel{
-@include flex(row, center, center)}
+.carousel {
+  @include flex(row, flex-start, center);
+  overflow: scroll;
+}
 
 .primary-button-container {
-  width:100vw;
-  @include flex(row,center,center )
+  width: 100vw;
+  @include flex(row, center, center);
 }
-.primary-button {
-  // margin:auto; //Why doesn't this ever work as expected?
+// .primary-button {
+// margin:auto; //Why doesn't this ever work as expected?
+// }
+
+/****************************
+INFO SECTION
+*****************************/
+.info-section {
+  display: flex;
+  margin: 2em;
 }
+.info-card {
+  @include flex(column, space-between, center);
+  width: 50vw;
+  text-align: center;
+}
+
+.info-card img {
+  width: 90px;
+}
+
+.info-card p {
+  width: 60%;
+}
+
+/****************************
+INFO SECTION
+*****************************/
+.shop-the-look-section {
+  @include flex(column, center, center);
+
+  .product-card {
+    padding: 0 1em;
+    @include flex(column, center, center);
+
+    .primary-button {
+      width: 100%;
+      margin: 1em 0;
+    }
+  }
+
+  img {
+    width: 100%;
+    max-width: 700px;
+  }
+}
+
 /****************************
 FOOTER
 *****************************/
 .footer-main {
   display: flex;
   flex-wrap: wrap;
-}
-.footer-main div {
-  min-width:300px;
-  width: 30vw;
-}
-.footer-main > div {
-  flex:2;
+  width: 100vw;
+  padding: 0 1em 2em 1em;
+
+  p,
+  a {
+    text-transform: none;
+  }
+  button {
+    color: var(--pink);
+  }
+  div {
+    width: 100%;
+    max-width: 400px;
+    // border:1px solid green;
+    font-size: 1.3rem;
+    line-height: 2em;
+  }
+
+  .newsletter form{
+    @include flex(column, flex-start, flex-start);
+
+    input {
+      font-size: 2rem;
+      padding: 0.3em;
+      margin-top: 1em;
+    }
+
+    input:focus {
+      outline:none;
+    }
+    button {
+      margin: 1.5em 0 0 0;
+      color: var(--white)
+    }
+  }
 }
