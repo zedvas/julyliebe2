@@ -134,7 +134,9 @@ body {
 nav {
   width: 100vw;
   // @include flex(row, space-between, space-between);
-  ul {width: 100%;}
+  ul {
+    width: 100%;
+  }
 }
 nav ul ul,
 .login-icon,
@@ -288,18 +290,36 @@ PRODUCT CARD
 /****************************
 CAROUSEL
 *****************************/
+
+.carousel-section {
+//  width: 100vw;
+  margin: 0 auto;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
 .carousel {
   @include flex(row, flex-start, center);
-  overflow: scroll;
+  animation: carousel 20s linear infinite;
+  width: 400px;
+}
+.carousel .product-card {
+  width: 300px;
+  display: block;
+  object-fit: cover;
+}
+
+@keyframes carousel {
+  100% {
+    transform: translateX(-100%);
+  }
 }
 
 .primary-button-container {
-  width: 100vw;
+  width: 100%;
   @include flex(row, center, center);
 }
-// .primary-button {
-// margin:auto; //Why doesn't this ever work as expected?
-// }
 
 /****************************
 INFO SECTION
@@ -368,7 +388,7 @@ FOOTER
     line-height: 2em;
   }
 
-  .newsletter form{
+  .newsletter form {
     @include flex(column, flex-start, flex-start);
 
     input {
@@ -378,11 +398,11 @@ FOOTER
     }
 
     input:focus {
-      outline:none;
+      outline: none;
     }
     button {
       margin: 1.5em 0 0 0;
-      color: var(--white)
+      color: var(--white);
     }
   }
 }
