@@ -106,6 +106,7 @@ NAVBAR
 *****************************/
 nav {
   height: var(--navbar-height);
+  max-height: 100px;
   background-color: var(--white);
 }
 nav ul {
@@ -144,7 +145,7 @@ nav ul ul,
   @include flex(column, flex-start, flex-start);
   position: absolute;
   background-color: var(--white);
-  width: var(--navbar-width);
+  // width: var(--navbar-width);
   height: calc(100vh - (var(--banner-height)) - var(--navbar-height));
   bottom: 0;
   left: 0;
@@ -238,6 +239,11 @@ HERO SECTION
     @include flex(row, center, center);
   }
 }
+
+.hero-section {
+  margin-bottom: 5em;
+}
+
 /****************************
 PRODUCT CARD 
 *****************************/
@@ -292,8 +298,8 @@ CAROUSEL
 *****************************/
 
 .carousel-section {
-//  width: 100vw;
-  margin: 0 auto;
+  //  width: 100vw;
+  margin: 5em auto;
   overflow: hidden;
   display: flex;
   flex-direction: column;
@@ -302,17 +308,19 @@ CAROUSEL
 .carousel {
   @include flex(row, flex-start, center);
   animation: carousel 20s linear infinite;
-  width: 400px;
+  width: max-content;
 }
 .carousel .product-card {
-  width: 300px;
   display: block;
   object-fit: cover;
 }
 
+
 @keyframes carousel {
-  100% {
-    transform: translateX(-100%);
+  from { transform: translateX(0)
+  }
+  to {
+    transform: translateX(calc(-320px * 6));
   }
 }
 
@@ -326,7 +334,7 @@ INFO SECTION
 *****************************/
 .info-section {
   display: flex;
-  margin: 2em;
+  margin: 5em 2em;
 }
 .info-card {
   @include flex(column, space-between, center);
@@ -347,6 +355,7 @@ INFO SECTION
 *****************************/
 .shop-the-look-section {
   @include flex(column, center, center);
+  margin-bottom: 5em;
 
   .product-card {
     padding: 0 1em;
