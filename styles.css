@@ -77,7 +77,7 @@ button {
 VARIABLES & MIXINS
 *****************************/
 :root {
-  --banner-height: 5vh;
+  --banner-height: 35px;
   --navbar-height: 10vh;
   --navbar-width: 50vw;
   --white: hsl(300, 50%, 98%);
