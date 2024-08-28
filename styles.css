@@ -110,111 +110,129 @@ svg {
 /****************************
 NAVBAR
 *****************************/
-nav {
-  height: var(--navbar-height);
-  max-height: 100px;
-  background-color: var(--white);
-}
-
-nav ul {
-  height: 100%;
+.nav-container {
+  width: 100vw;
   display: flex;
-  flex-direction: row;
   justify-content: space-between;
   align-items: center;
 }
 
-nav ul img {
+.logo {
   width: 100px;
 }
 
-nav svg {
-  width: 2rem;
+.logo img {
+  width: 100%;
 }
 
-@media (min-width: 700px) {
-  nav ul img {
-    width: 120px;
-  }
+header {
+  background-color: #fff;
+  box-shadow: 1px 1px 5px 0px rgb(170, 152, 152);
+  position: relative;
+  top: 0;
+  width: 100%;
+  position: fixed;
+  z-index: 1;
 }
-/****************************
-NAV MENU
-*****************************/
-body {
+header .nav {
+  background-color: #fff;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  max-height: 0;
+  transition: max-height 0.5s ease;
+  display: none;
+}
+header .menu a {
+  display: block;
+  padding: 3em;
+}
+header .menu a:hover {
+  color: grey;
+}
+header .hamburger {
+  cursor: pointer;
+  float: right;
+  padding: 3em 2em;
+}
+header .hamburger-line {
+  background-color: #000;
+  height: 2px;
+  width: 24px;
+  display: block;
   position: relative;
 }
-
-nav {
-  width: 100vw;
-}
-nav ul {
-  width: 100%;
-}
-
-nav ul ul,
-.login-icon,
-.preferences-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: flex-start;
+header .hamburger-line::before,
+header .hamburger-line::after {
+  background-color: #000;
+  content: "";
+  display: block;
+  height: 100%;
   position: absolute;
-  background-color: var(--white);
-  height: calc(100vh - (var(--banner-height)) - var(--navbar-height));
-  bottom: 0;
-  left: 0;
-}
-
-.preferences-container {
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-  align-items: center;
-}
-
-.login-icon {
-  bottom: 30px;
-}
-
-.login-icon,
-.preferences-container,
-nav ul ul li {
-  border-bottom: 1px solid grey;
+  transition: all 0.2s ease-out;
   width: 100%;
 }
-
-.login-icon,
-.preferences-container {
-  width: var(--navbar-width);
-  height: unset;
+header .hamburger-line::before {
+  top: 5px;
 }
-
-nav ul ul {
+header .hamburger-line::after {
+  top: -5px;
+}
+header .side-menu {
   display: none;
 }
-
-nav ul li:hover ul,
-nav ul li:hover .preferences-container {
-  display: block;
+header .side-menu:checked ~ nav {
+  display: flex;
+  max-height: 100%;
 }
-
-nav ul li:hover .open-hamburger {
+header .nav-container:has(.side-menu:checked) {
+  flex-direction: column;
+  align-items: end;
+}
+header .side-menu:checked + .logo {
   display: none;
 }
-
-nav ul li:hover .close-hamburger {
-  display: block;
+header .side-menu:checked ~ .hamburger .hamburger-line {
+  background: transparent;
+}
+header .side-menu:checked ~ .hamburger .hamburger-line::before {
+  transform: rotate(-45deg);
+  top: 0;
+}
+header .side-menu:checked ~ .hamburger .hamburger-line::after {
+  transform: rotate(45deg);
+  top: 0;
 }
 
-.close-hamburger {
-  display: none;
+@media screen and (min-width: 700px) {
+  .hamburger {
+    display: none;
+  }
+  header .nav-container {
+    display: flex;
+    justify-content: flex-start;
+  }
+  header .nav-container .nav {
+    display: flex;
+    max-height: -moz-fit-content;
+    max-height: fit-content;
+    width: auto;
+    height: auto;
+  }
+  header .nav-container .nav .menu {
+    display: flex;
+    flex-direction: row;
+  }
+  header .nav-container .nav .other-links {
+    justify-self: end;
+  }
 }
-
 /****************************
 HERO SECTION
 *****************************/
 .hero-section {
   position: relative;
+  margin-top: 100px;
 }
 .hero-section img {
   width: 100%;

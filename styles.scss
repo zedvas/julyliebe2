@@ -104,91 +104,130 @@ svg {
 /****************************
 NAVBAR
 *****************************/
-nav {
-  height: var(--navbar-height);
-  max-height: 100px;
-  background-color: var(--white);
+.nav-container {
+  width: 100vw;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
-nav ul {
-  height: 100%;
-  @include flex(row, space-between, center);
-}
-nav ul img {
+.logo {
   width: 100px;
 }
-nav svg {
-  width: 2rem;
-}
-@media (min-width: 700px) {
-  nav ul img {
-    width: 120px;
-  }
-}
-/****************************
-NAV MENU
-*****************************/
-
-body {
-  position: relative; //To set height of hamburger menu relative to body width.
-}
-
-nav {
-  width: 100vw;
-  // @include flex(row, space-between, space-between);
-  ul {
-    width: 100%;
-  }
-}
-nav ul ul,
-.login-icon,
-.preferences-container {
-  @include flex(column, flex-start, flex-start);
-  position: absolute;
-  background-color: var(--white);
-  // width: var(--navbar-width);
-  height: calc(100vh - (var(--banner-height)) - var(--navbar-height));
-  bottom: 0;
-  left: 0;
-}
-.preferences-container {
-  @include flex(row, flex-start, center);
-}
-.login-icon {
-  bottom: 30px; //change to  calculation dependent on height of preferences container
-}
-.login-icon,
-.preferences-container,
-nav ul ul li {
-  border-bottom: 1px solid grey;
+.logo img {
   width: 100%;
 }
-.login-icon,
-.preferences-container {
-  width: var(--navbar-width);
-  height: unset;
-}
-nav ul ul {
-  display: none;
-}
-nav ul li:hover ul,
-nav ul li:hover .preferences-container {
-  display: block;
+header {
+  background-color: #fff;
+  box-shadow: 1px 1px 5px 0px rgb(170, 152, 152);
+  position: relative;
+  top: 0;
+  width: 100%;
+  position: fixed;
+  z-index: 1;
+  .nav {
+    background-color: #fff;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height 0.5s ease;
+    display: none;
+  }
+  .menu a {
+    display: block;
+    padding: 3em;
+    &:hover {
+      color: grey;
+    }
+  }
+
+  .hamburger {
+    cursor: pointer;
+    float: right;
+    padding: 3em 2em;
+  }
+
+  .hamburger-line {
+    background-color: #000;
+    height: 2px;
+    width: 24px;
+    display: block;
+    position: relative;
+  }
+  .hamburger-line::before,
+  .hamburger-line::after {
+    background-color: #000;
+    content: "";
+    display: block;
+    height: 100%;
+    position: absolute;
+    transition: all 0.2s ease-out;
+    width: 100%;
+  }
+  .hamburger-line::before {
+    top: 5px;
+  }
+  .hamburger-line::after {
+    top: -5px;
+  }
+
+  .side-menu {
+    display: none;
+  }
+  .side-menu:checked ~ nav {
+    display: flex;
+    max-height: 100%;
+  }
+  .nav-container:has(.side-menu:checked) {
+    flex-direction: column;
+    align-items: end;
+  }
+  .side-menu:checked + .logo {
+    display: none;
+  }
+  .side-menu:checked ~ .hamburger .hamburger-line {
+    background: transparent;
+  }
+  .side-menu:checked ~ .hamburger .hamburger-line::before {
+    transform: rotate(-45deg);
+    top: 0;
+  }
+  .side-menu:checked ~ .hamburger .hamburger-line::after {
+    transform: rotate(45deg);
+    top: 0;
+  }
 }
 
-nav ul li:hover .open-hamburger {
-  display: none;
-}
-nav ul li:hover .close-hamburger {
-  display: block;
-}
-.close-hamburger {
-  display: none;
+@media screen and (min-width: 700px) {
+  .hamburger {
+    display: none;
+  }
+  header .nav-container {
+    display: flex;
+    justify-content: flex-start;
+    .nav {
+      display: flex;
+
+      max-height: fit-content;
+      width: auto;
+      height: auto;
+      .menu {
+        display: flex;
+        flex-direction: row;
+      }
+
+      .other-links {
+        justify-self: end;
+      }
+    }
+  }
 }
 /****************************
 HERO SECTION
 *****************************/
 .hero-section {
   position: relative;
+  margin-top: 100px;
 
   img {
     width: 100%;
@@ -315,9 +354,9 @@ CAROUSEL
   object-fit: cover;
 }
 
-
 @keyframes carousel {
-  from { transform: translateX(0)
+  from {
+    transform: translateX(0);
   }
   to {
     transform: translateX(calc(-320px * 6));
